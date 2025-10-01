@@ -1,168 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stone Paper Scissors</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-
-  <style>
-    .SPS {
-      border: 2px solid rgb(214, 214, 214);
-      border-radius: 35px;
-      width: 50%;
-      justify-content: center;
-      text-align: center;
-      margin: auto;
-      font-style: oblique;
-      background-color: rgb(255, 249, 224);
-    }
-
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      width: 50%;
-      margin: auto;
-      padding: 60px;
-    }
-
-    .button {
-      padding: 5px;
-      margin: 10px;
-      font-style: oblique;
-      font-size: large;
-      background-color: rgb(255, 239, 239);
-      border-radius: 15px;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    .button:active {
-      animation: bounce 0.3s;
-    }
-
-    @keyframes bounce {
-      0% {
-        transform: scale(1);
-      }
-      30% {
-        transform: scale(0.85);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-      70% {
-        transform: scale(0.95);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-  </style>
-
   <body>
     <div class="SPS">
       <h1>Stone Paper Scissors</h1>
       <div class="buttons">
-        <button
-          class="button"
-          onclick="
-      {
-    let randomNumber = Math.random() * 3;
-    let computerChoice;
-    if (randomNumber > 0 && randomNumber <= 1){
-        computerChoice = 'Stone';
-    }
-    else if (randomNumber > 1 && randomNumber <= 2) {
-        computerChoice = 'Paper';
-    }
-    else { computerChoice = 'Scissors'}; 
-
-    let resultMsg;
-    if (computerChoice === 'Stone') {
-        resultMsg = 'ITS A TIE'
-    }
-    else if (computerChoice === 'Paper') {
-        resultMsg ='COMPUTER WON'
-    }
-    else if (computerChoice === 'Scissors') {
-        resultMsg ='YOU WON'
-    }
-
-    alert(`You  Have Chosen Stone , Computer Chose ${computerChoice} and ${resultMsg}`)
-  }
-    "
-        >
-          Stone
-        </button>
-
-        <button
-          class="button"
-          onclick="
-      {
-    let randomNumber = Math.random() * 3;
-    let computerChoice;
-    if (randomNumber > 0 && randomNumber <= 1){
-        computerChoice = 'Stone';
-    }
-    else if (randomNumber > 1 && randomNumber <= 2) {
-        computerChoice = 'Paper';
-    }
-    else { computerChoice = 'Scissors'}
-
-    let resultMsg;
-    if (computerChoice === 'Stone') {
-        resultMsg ='YOU WON';
-    }
-    else if (computerChoice === 'Paper') {
-        resultMsg ='ITS A TIE';
-    }
-    else if (computerChoice === 'Scissors') {
-        resultMsg ='COMPUTER WON';
-    }
-    alert(`You  Have Chosen Paper , Computer Chose ${computerChoice} and ${resultMsg}`);
-  }
-    "
-        >
-          Paper
-        </button>
-
-        <button
-          class="button"
-          onclick="
-      {
-    let randomNumber = Math.random() * 3;
-    let computerChoice;
-    if (randomNumber > 0 && randomNumber <= 1){
-        computerChoice = 'Stone';
-    }
-    else if (randomNumber > 1 && randomNumber <= 2) {
-        computerChoice = 'Paper';
-    }
-    else { computerChoice = 'Scissors'};
-
-    let resultMsg;
-    if (computerChoice === 'Stone') {
-        resultMsg ='COMPUTER WON'
-    }
-    else if (computerChoice === 'Paper') {
-        resultMsg ='YOU WON'
-    }
-    else if (computerChoice === 'Scissors') {
-        resultMsg ='ITS A TIE'
-    }
-    alert(`You  Have Chosen Scissors , Computer Chose ${computerChoice} and ${resultMsg}`)
-  }
-    "
-        >
-          Scissors
-        </button>
+        <button class="button" onclick="play('Stone')">Stone</button>
+        <button class="button" onclick="play('Paper')">Paper</button>
+        <button class="button" onclick="play('Scissors')">Scissors</button>
       </div>
+      <p id="result"></p>
     </div>
+    <script src="script.js"></script>
   </body>
-
-  <script></script>
 </html>
